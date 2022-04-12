@@ -26,6 +26,35 @@ GazeCloudAPI.UseClickRecalibration = true;
 // Starts eye tracking
 GazeCloudAPI.StartEyeTracking();
 
+// Draws a circle around where we are looking right now, for demonstration purposes
+function draw(gazeX, gazeY) {
+    
+    var canvas = document.getElementById('circle');
+
+    const resize = () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    }
+
+    resize()
+    
+    if (canvas.getContext) {
+        var ctx = canvas.getContext('2d'); 
+        
+        var X = gazeX;
+        var Y = gazeY;
+        var R = 45;
+
+        // Clear frame so only one circle is drawn at a time
+        // ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.beginPath();
+        ctx.arc(X, Y, R, 0, 2 * Math.PI, false);
+        ctx.lineWidth = 3;
+        ctx.strokeStyle = '#db7575';
+        ctx.stroke();
+    }
+}
+
 GazeCloudAPI.OnResult = function (GazeData) {
 
     // // Important variables
@@ -39,6 +68,8 @@ GazeCloudAPI.OnResult = function (GazeData) {
 
     // GazeData.time // timestamp
     
+    draw(GazeData.GazeX, GazeData.GazeY);
+
     if (GazeData.GazeY > 700) {
         window.scrollBy(0,50); 
     } else if (GazeData.GazeY < 300) {
@@ -47,3 +78,4 @@ GazeCloudAPI.OnResult = function (GazeData) {
 
     
 }
+
