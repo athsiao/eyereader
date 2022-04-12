@@ -31,6 +31,13 @@ h4 {
     padding: 30% 20px 20px 0px;
 }
 
+h5 {
+    text-align: right;
+    font-size: 24px;
+    color: black;
+    padding: 30% 20px 20px 0px;
+}
+
 img {
     display: block;
     height: 250px;
@@ -140,4 +147,8 @@ ul.navbar li a:hover {
 
 body {
     background-color: #E5E5E5;
+}
+
+.lmao {
+    line-height: 1000%;
 }

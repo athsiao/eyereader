@@ -38,4 +38,12 @@ GazeCloudAPI.OnResult = function (GazeData) {
     // GazeData.GazeY // gaze y in screen coodinates
 
     // GazeData.time // timestamp
+    
+    if (GazeData.GazeY > 700) {
+        window.scrollBy(0,50); 
+    } else if (GazeData.GazeY < 300) {
+        window.scrollBy(0,-50);
+    }
+
+    
 }
