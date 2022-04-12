@@ -79,6 +79,21 @@ footer {
     border-radius: 15px;
 }
 
+#bible.card {
+    background: linear-gradient(292.92deg, #FFFFFF 53.38%, rgba(255, 255, 255, 0) 85.51%),
+    url('assets/bible_cover.jpg');
+}
+
+#harry.card {
+    background: linear-gradient(292.92deg, #FFFFFF 53.38%, rgba(255, 255, 255, 0) 85.51%),
+    url('assets/harry_cover.jpg');
+}
+
+#kimetsu.card {
+    background: linear-gradient(292.92deg, #FFFFFF 53.38%, rgba(255, 255, 255, 0) 85.51%),
+    url('assets/kimetsu_cover.jpg');
+}
+
 .username {
     color: #1286F0;
 }
