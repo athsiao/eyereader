@@ -3,7 +3,6 @@
 * The article referenced for several functions: https://medium.com/@williamwang15/integrating-gazecloudapi-a-high-accuracy-webcam-based-eye-tracking-solution-into-your-own-web-app-2d8513bb9865 
 */
 
-
 // Calibration is complete
 GazeCloudAPI.OnCalibrationComplete = function(){
     console.log('gaze Calibration Complete')
@@ -55,7 +54,10 @@ function draw(gazeX, gazeY) {
     }
 }
 
-GazeCloudAPI.OnResult = function (GazeData) {
+var myIframe = document.getElementById('iframe');
+var y = 0;
+
+GazeCloudAPI.OnResult = function (GazeData, y) {
 
     // // Important variables
     // GazeData.state // 0: valid gaze data; -1 : face tracking lost, 1 : gaze data uncalibrated
@@ -77,5 +79,13 @@ GazeCloudAPI.OnResult = function (GazeData) {
     }
 
     
-}
 
+    // if (GazeData.GazeY > 700) {
+    //     myIframe.contentWindow.scrollTo(0,y+50);
+    //     y += 50; 
+    // } else if (GazeData.GazeY < 300) {
+    //     myIframe.contentWindow.scrollTo(0,y-50);
+    //     y -= 50; 
+    // }
+    
+}
