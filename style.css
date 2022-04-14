@@ -17,22 +17,37 @@ html {
     overflow: auto;
 }
 
+/* Background color for the whole page */
+body {
+    background-color: #E5E5E5;
+}
+
+/* Container for everything except demonstrative circle canvas */
+#main-body {
+    background-color: #E5E5E5;
+    margin: 100px;
+    padding: 30px;
+}
+
+/* Eye pointer overlay for demonstration purposes */
 #circle {
     position: fixed;
     width: 100%;
     height: 100%;
     
-
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
 
+    /* Circle will be rendered over the rest of the HTML elements */
     z-index: 10;
 
+    /* The canvas can be clicked through, not interacted with */
     pointer-events: none;
 }
 
+/* Welcome screen main text "Welcome back, [name]! */
 h1 {
     font-family: 'Nunito';
     font-style: normal;
@@ -44,6 +59,12 @@ h1 {
     padding: 10px 10px 20px 10px;
 }
 
+/* Welcome text username color change */
+.username {
+    color: #1286F0;
+}
+
+/* PDF / Book titles */
 h4 {
     text-align: right;
     font-size: 24px;
@@ -51,26 +72,7 @@ h4 {
     padding: 30% 20px 20px 0px;
 }
 
-h5 {
-    text-align: right;
-    font-size: 24px;
-    color: black;
-    padding: 30% 20px 20px 0px;
-}
-
-img {
-    display: block;
-    height: 250px;
-    width: 250px;
-    margin: auto;
-}
-
-footer {
-    font-size: 10px;
-    text-align: center;
-    padding: 50px 0px 30px 0px;
-}
-
+/* Panel displaying PDF / Books */
 .card {
     border-radius: 10px;
     margin: 30px;
@@ -86,6 +88,7 @@ footer {
     border-radius: 15px;
 }
 
+/* !! TEMPORARY !! displays different background panel images depending on the book */
 #bible.card {
     background: linear-gradient(292.92deg, #FFFFFF 53.38%, rgba(255, 255, 255, 0) 85.51%),
     url('assets/bible_cover.jpg');
@@ -101,27 +104,7 @@ footer {
     url('assets/kimetsu_cover.jpg');
 }
 
-.username {
-    color: #1286F0;
-}
-
-.tag {
-    float: right;
-    padding: 10px;
-    width: 30%;
-    background-color: #fcdbc2;
-
-    text-align: center;
-    font-weight: 500;
-    font-size: 12px;
-    color:#a87a58;
-
-    border-radius: 0px 10px 0px 10px;
-    border-style: solid;
-    border-width: 0px 0px 1px 1px;
-    border-color: #e6b693;
-}
-
+/* Used to control the responsiveness of individual panels */
 .item {
     width: 50%;
     float: right;
@@ -130,36 +113,4 @@ footer {
 .last-item {
     width: 100%;
     float: left;
-}
-
-#main-body {
-    background-color: #E5E5E5;
-    margin: 100px;
-    padding: 30px;
-
-    /* border-style: solid;
-    border-radius: 25px;
-    border-width: 1px;
-    border-color: #d6ccb6; */
-}
-
-/* .overlay {
-    position: fixed;
-    display: none; 
-    width: 100%; 
-    height: 100%;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0,0,0,0.5);
-    z-index: 5;
-  }
-
-.unhide {
-    display: block;
-} */
-
-body {
-    background-color: #E5E5E5;
 }

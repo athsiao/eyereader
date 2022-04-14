@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Website Title Goes Here</title>
+    <title>Homepage</title>
 
     <!-- Import the webpage's stylesheet -->
     <link rel="stylesheet" href="style.css" />
@@ -17,8 +17,8 @@
     <!-- Import GazeCloud API for eye tracking -->
     <script src="https://api.gazerecorder.com/GazeCloudAPI.js"></script>
 
-    <!-- Import the webpage's javascript file -->
-    <!-- <script src="script.js" defer></script> -->
+    <!-- Import the webpage's javascript file // Contains actual tracking functionality -->
+    <script src="script.js" defer></script>
 
     <!-- Import Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,13 +31,6 @@
             .item {
                 width: 50%;
             }
-
-            /*  Example of a class modification for responsiveness
-                #maincontent {
-                border-image-source: url(assets/phone-frame.png);
-                border-image-slice: 525;
-                border-image-outset: 10px;
-                } */
         }
 
         @media (min-width: 769px) and (max-width: 991px) {
@@ -53,16 +46,19 @@
 
 <body>
     
-    <!-- Circle drawn over where we look for demonstration purposes -->
+    <!-- Creates a canvas for the circle pointer, overlay over main content -->
     <canvas id="circle" width="100%" height="100%"></canvas>
 
 
     <div id="main-body">
 
+        <!-- Welcome message with username -->
         <h1>Welcome back, <span class="username">Ian</span>!</h1>
+        
+        <!-- Different PDFs available -->
         <div class="item">
             <div class="card" id="bible">
-                <a href="sample/bible.html"><h5>The King James Holy Bible</h5></a>
+                <a href="sample/bible.html"><h4>The King James Holy Bible</h4></a>
             </div>
         </div>
         <div class="item">
