@@ -15,10 +15,13 @@
     <link rel="stylesheet" href="style.css" />
 
     <!-- Import GazeCloud API for eye tracking -->
-    <script src="https://api.gazerecorder.com/GazeCloudAPI.js"></script>
+    <!-- <script src="https://api.gazerecorder.com/GazeCloudAPI.js"></script> -->
 
-    <!-- Import the webpage's javascript file // Contains actual tracking functionality -->
-    <script src="script.js" defer></script>
+    <!-- Import the webpage's GazeCloud implementation in JavaScript -->
+    <!-- <script src="script.js" defer></script> -->
+
+    <!-- Import cookies file to remember user info -->
+    <script src="cookies.js" defer></script>
 
     <!-- Import Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,13 +32,13 @@
     <style>
         @media (min-width: 992px) {
             .item {
-                width: 50%;
+                width: 200px;
             }
         }
 
         @media (min-width: 769px) and (max-width: 991px) {
             .item {
-                width: 50%;
+                width: 200px;
             }
         }
     </style>
@@ -44,7 +47,7 @@
 
 <!-- Visible to the user -->
 
-<body>
+<body onload="checkCookie()">
     
     <!-- Creates a canvas for the circle pointer, overlay over main content -->
     <canvas id="circle" width="100%" height="100%"></canvas>
@@ -53,22 +56,25 @@
     <div id="main-body">
 
         <!-- Welcome message with username -->
-        <h1>Welcome back, <span class="username">Ian</span>!</h1>
+        <h1>Welcome back, <span id="user">user</span>!</h1>
+        <hr>
         
         <!-- Different PDFs available -->
-        <div class="item">
-            <div class="card" id="bible">
-                <a href="sample/bible.html"><h4>The King James Holy Bible</h4></a>
+        <div id="maincontainer">
+            <div class="item">
+                <div class="card">
+                    <a href="sample/bible.html"><h4>The King James Holy Bible</h4></a>
+                </div>
             </div>
-        </div>
-        <div class="item">
-            <div class="card" id="harry">
-                <h4>Harry Potter and the Chamber of Secrets</h4>
+            <div class="item">
+                <div class="card">
+                    <h4>Harry Potter and the Chamber of Secrets</h4>
+                </div>
             </div>
-        </div>
-        <div class="item">
-            <div class="card" id="kimetsu">
-                <h4>Demon Slayer: Volume 1</h4>
+            <div class="item">
+                <div class="card">
+                    <h4>Demon Slayer: Volume 1</h4>
+                </div>
             </div>
         </div>
     
