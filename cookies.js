@@ -4,12 +4,13 @@
  */
 
 const { addListener } = require("process");
+prompt("Test");
 
 // Function stores the name of the visitor in a cookie variable
 // Params are name (cname), value (cvalue), days until expiry (exdays)
 function setCookie(cname, cvalue, exdays) {
     const d = new Date();
-    d.setTime(d.getTime() + (ex*24*60*60*1000));
+    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
     let expires = "expires=" + d.toUTCString();
     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
@@ -49,19 +50,19 @@ function getCookie(cname) {
 function checkCookie() {
 
     // Check if there is a saved username
-    let username = getCookie("username");
+    let user = getCookie("username");
 
     // If there is a name, give a welcome back message
-    if (username != "") {
-        alert("Welcome back, " + username);
+    if (user != "") {
+        alert("Welcome back, " + user);
     }
     // If there is no saved name, ask them to enter one
     else {
-        username = prompt("What's your name?");
+        user = prompt("What's your name?", "");
         // If the entered username is valid
-        if (username != "" && username != null) {
-            // Set a cookie for their name
-            setCookie("username", username, 365);
+        if (user != "" && user != null) {
+            // Set a cookie for their name that expires in 365 days
+            setCookie("username", user, 365);
         } else {
             // Gives an error if the name is not valid
             alert("Error: that is not a valid name");
