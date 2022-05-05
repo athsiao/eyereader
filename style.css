@@ -91,13 +91,9 @@ h4 {
     float: left;
 }
 
-.last-item {
-    width: 200px;
-    float: left;
-}
-
 #maincontainer {
     display: block;
+    float: left;
     margin-left: auto;
     margin-right: auto;
     width: 100%;
