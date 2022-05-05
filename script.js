@@ -92,7 +92,7 @@ GazeCloudAPI.OnResult = function (GazeData, y) {
     draw(GazeData.GazeX, GazeData.GazeY);
 
     // Scrolls up or down depending on if gaze is high or low enough on the screen
-    if (GazeData.GazeY > 700) {
+    if (GazeData.GazeY > 500) {
         window.scrollBy(0,50); 
     } else if (GazeData.GazeY < 300) {
         window.scrollBy(0,-50);
