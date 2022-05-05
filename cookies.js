@@ -54,15 +54,22 @@ function checkCookie() {
 
     // If there is a name, give a welcome back message
     if (user != "") {
-        alert("Welcome back, " + user);
+        // Sets the welcome back message to greet the user
+        document.getElementById('user').innerHTML = user;
     }
     // If there is no saved name, ask them to enter one
     else {
         user = prompt("What's your name?", "");
         // If the entered username is valid
         if (user != "" && user != null) {
+
             // Set a cookie for their name that expires in 365 days
             setCookie("username", user, 365);
+
+
+            // Sets the welcome back message to greet the user
+            document.getElementById('user').innerHTML = user;
+            
         } else {
             // Gives an error if the name is not valid
             alert("Error: that is not a valid name");
